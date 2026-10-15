@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1 { font-size: 24pt }
+h2 { font-size: 18pt }
+h3 { font-size: 14pt }
+h4 { font-size: 12pt }
+h5 { font-size: 10pt }
+h6 { font-size: 8pt }
+
+
+
+
+
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold }
+b, strong { font-weight: bold }
+i, em, cite, var, dfn, address { font-style: italic }
+code, kbd, samp, pre, tt { font-family: monospace }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p { margin: 1em 0 }
+h1 { margin: 0.67em 0 }
+h2 { margin: 0.83em 0 }
+h3 { margin: 1em 0 }
+h4 { margin: 1.33em 0 }
+h5 { margin: 1.67em 0 }
+h6 { margin: 2.33em 0 }
+blockquote { margin: 1em 40pt }
+
+
+
+
+
+
+
+
+
+
+
+
+html, body, div, p, h1, h2, h3, h4, h5, h6,
+ul, ol, li, dl, dt, dd, blockquote, pre, hr,
+form, fieldset,
+header, footer, section, article, aside, nav, main,
+figure, figcaption, address { display: block }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table { display: table }
+thead, tbody, tfoot { display: table-row-group }
+tr { display: table-row }
+td, th { display: table-cell }
+
+
+
+
+
+
+
+
+th { font-weight: bold }
+
+
+
+
+
+
+
+
+
+
+caption { display: block }
+colgroup, col { display: none }

@@ -1,0 +1,47 @@
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
+allow-panic-in-tests = true
+allow-indexing-slicing-in-tests = true
+
+
+disallowed-types = [
+    { path = "std::fs::File", reason = "the engine has no filesystem; resources arrive through RenderHost" },
+    { path = "std::fs::OpenOptions", reason = "the engine has no filesystem; resources arrive through RenderHost" },
+    { path = "std::net::TcpStream", reason = "the engine has no network; fetching belongs to the host" },
+    { path = "std::net::TcpListener", reason = "the engine has no network; fetching belongs to the host" },
+    { path = "std::net::UdpSocket", reason = "the engine has no network; fetching belongs to the host" },
+    { path = "std::process::Command", reason = "the engine spawns nothing" },
+    { path = "std::os::unix::net::UnixStream", reason = "the engine has no network" },
+    { path = "std::os::unix::net::UnixListener", reason = "the engine has no network" },
+    { path = "std::time::SystemTime", reason = "the engine cannot read a clock; time enters as a value from the host" },
+    { path = "std::time::Instant", reason = "the engine cannot read a clock; time enters as a value from the host" },
+]
+
+disallowed-methods = [
+    { path = "std::fs::read", reason = "resources arrive through RenderHost" },
+    { path = "std::fs::read_to_string", reason = "resources arrive through RenderHost" },
+    { path = "std::fs::write", reason = "the engine returns bytes; the shell writes them" },
+    { path = "std::fs::remove_file", reason = "the engine never mutates the filesystem" },
+    { path = "std::fs::create_dir_all", reason = "the engine never mutates the filesystem" },
+    { path = "std::fs::metadata", reason = "the engine cannot observe the filesystem" },
+    { path = "std::fs::canonicalize", reason = "path resolution is the host's, not the engine's" },
+    { path = "std::fs::read_link", reason = "the engine cannot observe the filesystem" },
+    { path = "std::fs::read_dir", reason = "the engine cannot observe the filesystem" },
+    { path = "std::fs::copy", reason = "the engine never mutates the filesystem" },
+    { path = "std::fs::rename", reason = "the engine never mutates the filesystem" },
+    { path = "std::fs::remove_dir_all", reason = "the engine never mutates the filesystem" },
+    { path = "std::env::temp_dir", reason = "the engine has no notion of ambient directories" },
+    { path = "std::env::current_exe", reason = "the engine does not inspect its own process" },
+    { path = "std::env::home_dir", reason = "the engine has no notion of ambient directories" },
+    { path = "std::process::abort", reason = "the engine returns errors; it never kills the process" },
+    { path = "std::env::var", reason = "the engine's behaviour comes from its arguments, never from ambient state" },
+    { path = "std::env::vars", reason = "the engine's behaviour comes from its arguments, never from ambient state" },
+    { path = "std::env::args", reason = "arguments belong to the shell" },
+    { path = "std::env::args_os", reason = "arguments belong to the shell" },
+    { path = "std::env::current_dir", reason = "the engine has no notion of a working directory" },
+    { path = "std::env::set_var", reason = "the engine never mutates ambient state" },
+    { path = "std::io::stdin", reason = "the shell reads input and passes bytes in" },
+    { path = "std::io::stdout", reason = "the engine returns bytes; the shell writes them" },
+    { path = "std::io::stderr", reason = "the engine reports through its Warning channel, not by printing" },
+    { path = "std::process::exit", reason = "the engine returns errors; exit codes are the shell's contract" },
+]

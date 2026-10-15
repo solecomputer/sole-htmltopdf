@@ -1,0 +1,50 @@
+[workspace]
+resolver = "3"
+members = ["engine", "cli"]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2024"
+rust-version = "1.93"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/solecomputer/sole-htmltopdf"
+homepage = "https://sole.computer"
+authors = ["Sole Computer"]
+
+[workspace.dependencies]
+cssparser = "0.35"
+html5ever = "0.31"
+harfrust = { version = "0.13.3", default-features = false, features = ["std"] }
+miniz_oxide = { version = "0.8", default-features = false }
+pdf-writer = "0.15"
+precomputed-hash = "0.1"
+read-fonts = { version = "=0.43.3", default-features = false, features = ["std"] }
+selectors = "0.28"
+subsetter = { version = "0.2.6", default-features = false }
+thiserror = "2"
+url = "2.5"
+unicode-bidi = { version = "0.3.18", default-features = false, features = ["hardcoded-data", "std"] }
+unicode-script = "0.5.8"
+unicode-segmentation = "1.13.3"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+unreachable_pub = "warn"
+missing_debug_implementations = "warn"
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+indexing_slicing = "deny"
+as_conversions = "deny"
+wildcard_enum_match_arm = "deny"
+float_cmp = "deny"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+doc_markdown = "allow"
+must_use_candidate = "warn"
+disallowed_types = "deny"
+disallowed_methods = "deny"

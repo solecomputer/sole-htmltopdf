@@ -1,0 +1,25 @@
+[package]
+name = "sole-htmltopdf"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+description = "Dual-mode HTML-to-PDF in Rust with wkhtmltopdf 0.12.6 command-line compatibility."
+keywords = ["pdf", "html", "wkhtmltopdf", "html-to-pdf", "html2pdf"]
+categories = ["command-line-utilities", "rendering", "text-processing"]
+readme = "README.md"
+include = ["src/**", "tests/smoke.rs", "Cargo.toml", "README.md", "LICENSE-APACHE", "LICENSE-MIT", "THIRD-PARTY-NOTICES.md"]
+
+[[bin]]
+name = "sole-htmltopdf"
+path = "src/main.rs"
+
+[dependencies]
+sole-htmltopdf-engine = { path = "../engine", version = "0.0.1" }
+thiserror.workspace = true
+
+[lints]
+workspace = true

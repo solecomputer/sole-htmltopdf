@@ -1,0 +1,33 @@
+[package]
+name = "sole-htmltopdf-engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+description = "Embeddable dual-mode HTML-to-PDF engine in Rust with a wkhtmltopdf 0.12.6 compatibility profile."
+keywords = ["pdf", "html", "wkhtmltopdf", "html-to-pdf", "html2pdf"]
+categories = ["rendering", "text-processing"]
+readme = "README.md"
+include = ["src/**", "data/**", "tests/smoke.rs", "Cargo.toml", "clippy.toml", "README.md", "LICENSE-APACHE", "LICENSE-MIT", "THIRD-PARTY-NOTICES.md"]
+
+[dependencies]
+cssparser.workspace = true
+html5ever.workspace = true
+harfrust.workspace = true
+miniz_oxide.workspace = true
+pdf-writer.workspace = true
+precomputed-hash.workspace = true
+read-fonts.workspace = true
+selectors.workspace = true
+subsetter.workspace = true
+thiserror.workspace = true
+unicode-bidi.workspace = true
+unicode-script.workspace = true
+unicode-segmentation.workspace = true
+url.workspace = true
+
+[lints]
+workspace = true
